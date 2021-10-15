@@ -1,7 +1,7 @@
 #include <LM35.h>
 String tiempo;
 int x=0,y=0;
-float temperatura;
+float temperaturac, temperaturaf, temperaturak;
 LM35 temp(A0);
 
 void setup() {
@@ -18,8 +18,14 @@ void loop() {
   }
   while(x < y)
   {
-      temperatura = temp.cel();
-      Serial.println(temperatura);
+      temperaturac = temp.cel();
+      temperaturaf = temp.fah();
+      temperaturak = temp.kel();
+      Serial.print(temperaturac);
+      Serial.print(',');
+      Serial.print(temperaturaf);
+      Serial.print(',');
+      Serial.println(temperaturak);
       x = x + 1;
       delay(1000);
   }
