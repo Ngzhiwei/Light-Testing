@@ -27,11 +27,13 @@ void loop() {
       Serial.print(',');
       Serial.println(temperaturak);
       x = x + 1;
-      delay(1000);
+      delay(250);
   }
   if(x == y)
   {
     x=0;
     y=0;
   }
+}
+
 }
